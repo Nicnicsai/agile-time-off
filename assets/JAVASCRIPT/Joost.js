@@ -1,4 +1,4 @@
-//const API_KEY = "5ae2e3f221c38a28845f05b62c7b6f58f7f833c338751dfdba82444e";
+const API_KEY = "5ae2e3f221c38a28845f05b62c7b6f58f7f833c338751dfdba82444e";
 let cities = ["Antwerpen", "Chicago", "Capetown"];
 let testXid = "R4156906";
 let lon = 4.40346;
@@ -24,8 +24,9 @@ function getCity(cities) {
     return cities[Math.round(Math.random()*(cities.length-1))];
 }
 
+getCapital(dropDownInput)
+    .then(capital => console.log(capital));
 
-//console.log("test");
-console.log(fetchCountry(dropDownInput));
+//console.log(fetchCountry(dropDownInput));
 
 //fetchData(fetchCountry(dropDownInput));
