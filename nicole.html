@@ -28,25 +28,26 @@
 
     <section class="first-section">
 
-        <div class="container-logo">
-            <img src="assets/images/timeoff-logo-18.png" alt="Time-off logo">
-        </div>
+<!-- TEMPLATE -->
 
+     <template id="tpl-slotmachine">
+             <ul class="tpl-results">
+                 <li><img src="" alt="Image of activity" class="img-activity"></li>
+                 <li><h4 class="title-activity">Insert title activity</h4></li>
+                 <li><p class="description">Insert description activity</p></li>
+             </ul>
+         </template>
+
+        <h1 id="container-logo">Time off Slotmachine</h1>
         <section class="container-results">
-            <table>
-                <tr class="results-images">
-                    <td>
-                        <div class="rectangle"></div>
-                    </td>
-                    <td>
-                        <div class="rectangle"></div>
-                    </td>
-                    <td>
-                        <div class="rectangle"></div>
-                    </td>
+            <table id="table">
+                <tr class="results-images table_row">
+                    <td class="rectangle">&nbsp;</td>
+                    <td class="rectangle">&nbsp;</td>
+                    <td class="rectangle">&nbsp;</td>
                 </tr>
 
-                <tr class="results-named">
+                <tr class="results-named table_row">
                     <td id="continent-text">CONTINENT</td>
                     <td id="country-text">COUNTRY</td>
                     <td id="city-text">CITY</td>
@@ -62,8 +63,10 @@
             <button class="more-info-button">More info</button>
         </div>
 
-    </section>
+        <div class="resultsDisplay"></div>
 
+
+    </section>
 
     <!--   HERE COMES TEMPLATE (ADD height: +-50vh)         -->
 
