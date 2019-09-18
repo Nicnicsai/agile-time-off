@@ -1,5 +1,4 @@
-<<<<<<< HEAD
-=======
+
 <!doctype html>
 <html lang="en">
 <head>
@@ -11,12 +10,14 @@
     function gtag() {
         dataLayer.push(arguments);
     }
+
     gtag('js', new Date());
     gtag('config', 'UA-148155601-1', {'optimize_id': 'GTM-NB6JLKL'});</script>
 
     <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"
-          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
+    <!--          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
+    <link rel="stylesheet" href="assets/CSS/bootstrap.css">
     <link rel="stylesheet" href="assets/CSS/time-off.css">
 </head>
 <body>
@@ -24,47 +25,121 @@
 
     <h2>Travelling Goals</h2>
 </header>
-        <div class="container">
-        <div class="row">
 
-            <hr>
-            <div class="dropdown">
-                <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenu1"
-                        data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    Dropdown
-                </button>
-                <ul class="dropdown-menu multi-level" role="menu" aria-labelledby="dropdownMenu">
-                    <li class="dropdown-item"><a href="#">Some action</a></li>
-                    <li class="dropdown-item"><a href="#">Some other action</a></li>
-                    <li class="dropdown-divider"></li>
-                    <li class="dropdown-submenu">
-                        <a class="dropdown-item" tabindex="-1" href="#">Hover me for more options</a>
-                        <ul class="dropdown-menu">
-                            <li class="dropdown-item"><a tabindex="-1" href="#">Second level</a></li>
-                            <li class="dropdown-submenu">
-                                <a class="dropdown-item" href="#">Even More..</a>
-                                <ul class="dropdown-menu">
-                                    <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                    <li class="dropdown-submenu"><a class="dropdown-item" href="#">another level</a>
-                                        <ul class="dropdown-menu">
-                                            <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            <li class="dropdown-item"><a href="#">4th level</a></li>
-                                            <li class="dropdown-item"><a href="#">4th level</a></li>
-                                        </ul>
-                                    </li>
-                                    <li class="dropdown-item"><a href="#">3rd level</a></li>
-                                </ul>
-                            </li>
-                            <li class="dropdown-item"><a href="#">Second level</a></li>
-                            <li class="dropdown-item"><a href="#">Second level</a></li>
-                        </ul>
-                    </li>
-                </ul>
+
+
+
+<section class="container-results">
+    <table>
+        <tr class="results-images">
+            <td>
+                <div class="rectangle"></div>
+            </td>
+            <td>
+                <div class="rectangle"></div>
+            </td>
+            <td>
+                <div class="rectangle"></div>
+            </td>
+        </tr>
+
+        <tr class="results-named">
+            <td id="continent-text">CONTINENT</td>
+            <td id="country-text">COUNTRY</td>
+            <td id="city-text">CITY</td>
+        </tr>
+    </table>
+
+    <div id="container-button-play">
+        <button class="play-button">START SPINNING!</button>
+    </div>
+</section>
+
+
+
+
+
+<div id="randomize">
+    <div class="container">
+        <h1>Randomize your stuff!</h1>
+
+        <div class="row">
+            <div class="col-sm-4">
+                <div>
+                    <div id="machine1" class="randomizeMachine">
+                        <div><img src="assets/images/Africa.png" /></div>
+                        <div><img src="assets/images/Asia.png" /></div>
+                        <div><img src="assets/images/Europe.png" /></div>
+                        <div><img src="assets/images/Oceania.png" /></div>
+                        <div><img src="assets/images/SouthAmerica.png" /></div>
+                        <div><img src="assets/images/NorthAmerica.png" /></div>
+
+                    </div>
+                </div>
+                <div id="machine1Result" class="col-xs-4 machineResult">Index: 0</div>
+            </div>
+
+            <div class="col-sm-4">
+                <div>
+                    <div id="machine2" class="randomizeMachine">
+                        <div><img src="assets/images/Africa.png" /></div>
+                        <div><img src="assets/images/Asia.png" /></div>
+                        <div><img src="assets/images/Europe.png" /></div>
+                        <div><img src="assets/images/Oceania.png" /></div>
+                        <div><img src="assets/images/SouthAmerica.png" /></div>
+                        <div><img src="assets/images/NorthAmerica.png" /></div>
+
+                    </div>
+                </div>
+                <div id="machine2Result" class="col-xs-4 machineResult">Index: 1</div>
+            </div>
+
+            <div class="col-sm-4">
+                <div>
+                    <div id="machine3" class="randomizeMachine">
+                        <div><img src="assets/images/Africa.png" /></div>
+                        <div><img src="assets/images/Asia.png" /></div>
+                        <div><img src="assets/images/Europe.png" /></div>
+                        <div><img src="assets/images/Oceania.png" /></div>
+                        <div><img src="assets/images/SouthAmerica.png" /></div>
+                        <div><img src="assets/images/NorthAmerica.png" /></div>
+
+                    </div>
+                </div>
+                <div id="machine3Result" class="col-xs-4 machineResult">Index: 2</div>
+            </div>
+
+            <div class="btn-group btn-group-justified" role="group">
+                <button id="randomizeButton" type="button" class="btn btn-danger btn-lg">Shuffle</button>
             </div>
         </div>
-    </div>
 
 
+
+
+
+
+
+
+
+
+
+<div class="container">
+
+
+    <br/><br/>
+
+    <span class="custom-dropdown big">
+    <select>
+        <option id="africa">AFRICA</option>
+        <option id="asia">ASIA</option>
+        <option id="eu">EUROPE</option>
+        <option id="Oceania">Oceania</option>
+        <option id="Americas">Americas</option>
+
+    </select>
+</span>
+</div>
 
 
 <!--<div>-->
@@ -81,7 +156,6 @@
 <!--    </li>-->
 
 <!--</div>-->
-
 
 
 <div class="inputsection">
@@ -122,13 +196,17 @@
 <!--    </div>-->
 
 
-<template>
-        <div class="row">
-            <div class="col-sm-4"> <h id="city-name"></h> </div>
-            <div class="col-sm-4"> <img src="" id="city-img" alt="city pic"></div>
-            <div class="col-sm-4"> <p id="city-info">    </p> </div>
-        </div>
-</template>
+
+
+<!--<template>-->
+
+<div class="row">
+    <div class="col-sm-4"><h2 id="city-name"></h2></div>
+    <div class="col-sm-4"><img src="" id="city-img" alt="city pic"></div>
+    <div class="col-sm-4"><p id="city-info"></p></div>
+</div>
+<!--</template>-->
+
 
 
 <!--    <div id="result" >-->
@@ -152,7 +230,6 @@
 <!--                <th>-->
 
 
-
 <!--                </th>-->
 <!--            </tr>-->
 
@@ -162,9 +239,15 @@
 
 
 <div class="bg"></div>
-<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
-<script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
-<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+<script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"
+        integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
+        crossorigin="anonymous"></script>
+<script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
+        integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
+        crossorigin="anonymous"></script>
+<script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
+        integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
+        crossorigin="anonymous"></script>
 
 <script src="assets/JAVASCRIPT/time-off.js" charset="UTF-8"></script>
 </body>
