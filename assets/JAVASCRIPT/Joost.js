@@ -94,10 +94,31 @@ function getActivityInfo(activityXid){
             console.log(activity.url);
             console.log(activity.wikipedia_extracts.title);
             console.log(activity.wikipedia_extracts.text);
+
+            fillTemplate(activity.name, activity.image, activity.wikipedia_extracts.text, activity.url)
         })
 }
 
+function fillTemplate(title, imgUrl, description, url) {
+    let template = document.querySelector("#tpl-slotmachine");
+    let placementLocation = document.querySelector("#resultsDisplay");
 
+    let node = document.createElement("p");
+    let urlnode = document.createTextNode(url);         // Create a text node
+    node.appendChild(urlnode);
+
+    template.content.querySelector(".title-activity").innerText = title;
+    template.content.querySelector(".img-activity").setAttribute("src", imgUrl);
+    template.content.querySelector(".description").innerText = description;
+    template.content.querySelector(".description").appendChild(node);
+
+    //Need to prepend img link with : https://api-gateway-becode.herokuapp.com/?goto=
+    //In order to prevent CORB warnings / conflicts
+
+
+    let clone = template.content.cloneNode(true);
+    placementLocation.appendChild(clone);
+}
 
 /*getCapital(dropDownInput)
     .then(capital => {
