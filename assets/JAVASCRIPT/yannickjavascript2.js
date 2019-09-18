@@ -11,7 +11,7 @@ function fetchCountry(continent) {
             randomCountry = countryInfo[Math.floor((Math.random() * countryInfo.length))];
             fetchCountryDescription(randomCountry.name);
             fetchAttractions(randomCountry.name, randomCountry.capital);
-            return randomCountry;
+            getFunStuff(randomCountry.capital)
         })
 }
 
