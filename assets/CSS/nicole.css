@@ -7,15 +7,37 @@ html {
   font-family: 'Montserrat', sans-serif; }
 
 .container-slotmachine {
-  width: 1000px;
   margin: auto;
   padding: 10px; }
 
+#container-logo {
+  text-indent: -100000px;
+  background-image: url("../images/timeoff-logo-18.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 141px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 714px;
+  margin-top: 20px; }
+
+#table {
+  display: table;
+  text-align: center;
+  width: 80%;
+  margin: 3% auto 0;
+  border-collapse: separate; }
+
+.table_row {
+  display: table-row; }
+
 .first-section {
-  height: 100vh; }
+  height: 130vh; }
 
 table td {
-  text-align: center; }
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px; }
 
 .rectangle {
   background-color: #f8582e;
@@ -25,6 +47,9 @@ table td {
 .results-named {
   font-family: "Fugaz One", cursive;
   color: yellow; }
+
+#container-button-play {
+  text-align: center; }
 
 .play-button {
   background-color: yellow;
@@ -40,11 +65,15 @@ table td {
   border-bottom: 2px solid #f8582e;
   color: yellow;
   background-color: transparent;
-  font-size: 15px; }
+  font-size: 15px;
+  text-decoration: none; }
 
 #more-info {
   float: right;
   padding-right: 50px; }
+
+.resultsDisplay {
+  color: yellow; }
 
 .second-section {
   height: 100vh; }
@@ -54,6 +83,10 @@ h2 {
   font-family: "Fugaz One", cursive;
   color: yellow;
   border-bottom: 2px solid #f8582e; }
+
+#how-it-works {
+  width: 80%;
+  margin: 3% auto 0; }
 
 #how-it-works > p {
   color: yellow;
@@ -68,7 +101,8 @@ p > span {
   border-bottom: 2px solid #f8582e;
   color: yellow;
   background-color: transparent;
-  font-size: 15px; }
+  font-size: 15px;
+  text-decoration: none; }
 
 #start-spinning {
   float: right;
