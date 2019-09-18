@@ -1,0 +1,77 @@
+html {
+  background: url("../images/time-off-background-17.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif; }
+
+.container-slotmachine {
+  width: 1000px;
+  margin: auto;
+  padding: 10px; }
+
+.first-section {
+  height: 100vh; }
+
+table td {
+  text-align: center; }
+
+.rectangle {
+  background-color: #f8582e;
+  height: 370px;
+  width: 350px; }
+
+.results-named {
+  font-family: "Fugaz One", cursive;
+  color: yellow; }
+
+.play-button {
+  background-color: yellow;
+  border: 5px solid #f8582e;
+  font-size: 19px;
+  letter-spacing: 0.2em;
+  color: #110d2b;
+  font-family: "Fugaz One", cursive;
+  padding: 15px 150px; }
+
+.more-info-button {
+  border: none;
+  border-bottom: 2px solid #f8582e;
+  color: yellow;
+  background-color: transparent;
+  font-size: 15px; }
+
+#more-info {
+  float: right;
+  padding-right: 50px; }
+
+.second-section {
+  height: 100vh; }
+
+h2 {
+  font-weight: normal;
+  font-family: "Fugaz One", cursive;
+  color: yellow;
+  border-bottom: 2px solid #f8582e; }
+
+#how-it-works > p {
+  color: yellow;
+  font-size: 25px;
+  letter-spacing: 0.05em; }
+
+p > span {
+  background-color: #f8582e; }
+
+.start-spinning {
+  border: none;
+  border-bottom: 2px solid #f8582e;
+  color: yellow;
+  background-color: transparent;
+  font-size: 15px; }
+
+#start-spinning {
+  float: right;
+  padding-right: 50px; }
+
+/*# sourceMappingURL=nicole.css.map */

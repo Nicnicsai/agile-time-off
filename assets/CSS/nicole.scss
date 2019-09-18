@@ -1,0 +1,117 @@
+$orange: #f8582e;
+$blue-dark: #110d2b;
+$purple-dark: #1e192d;
+$purple-light: #3b264f;
+$white: #efefef;
+$fugaz:'Fugaz One', cursive;
+$Montserrat: 'Montserrat', sans-serif;
+
+// color code for yellow still to be defined
+
+//general
+html {
+  background: url("../images/time-off-background-17.jpg") no-repeat center center fixed;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Montserrat', sans-serif;
+}
+// WHOLE CONTAINER
+
+.container-slotmachine {
+
+  width: 1000px;
+  margin: auto;
+  padding: 10px;
+
+}
+
+
+
+
+//FIRST SECTION
+.first-section {
+  height: 100vh;
+}
+
+
+table td {
+  text-align: center;
+}
+
+
+.rectangle {
+  background-color: $orange;
+  height: 370px;
+  width: 350px;
+}
+
+.results-named {
+  font-family: $fugaz;
+  color: yellow;
+}
+
+
+
+.play-button {
+
+  background-color: yellow;
+  border: 5px solid $orange;
+  font-size: 19px;
+  letter-spacing: 0.2em;
+  color: $blue-dark;
+  font-family: $fugaz;
+  padding: 15px 150px;
+}
+
+.more-info-button {
+  border: none;
+  border-bottom: 2px solid $orange;
+  color: yellow;
+  background-color: transparent;
+  font-size: 15px;
+}
+
+#more-info {
+  float:right;
+  padding-right: 50px;
+}
+
+//SECOND SECTION
+
+.second-section {
+  height: 100vh;
+}
+
+h2 {
+  font-weight: normal;
+  font-family: $fugaz;
+  color: yellow;
+  border-bottom: 2px solid $orange;
+}
+
+#how-it-works >p {
+  color: yellow;
+  font-size: 25px;
+  letter-spacing: 0.05em;
+}
+
+p > span {
+  background-color: $orange;
+}
+
+
+
+.start-spinning {
+  border: none;
+  border-bottom: 2px solid $orange;
+  color: yellow;
+  background-color: transparent;
+  font-size: 15px;
+}
+
+#start-spinning {
+  float:right;
+  padding-right: 50px;
+}
