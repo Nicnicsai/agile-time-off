@@ -95,15 +95,19 @@ let spinButton = document.getElementById("play-button");
 
 spinButton.addEventListener("click", function () {
     if (spinButton.innerText === "START SPINNING!") {
-        continentSlotInterval = setInterval(continentSpin, 50);
-        countrySlotInterval = setInterval(countrySpin, 50);
-        citySlotInterval = setInterval(citySpin, 50);
+        continentSlotInterval = setInterval(continentSpin, 100);
+        countrySlotInterval = setInterval(countrySpin, 100);
+        citySlotInterval = setInterval(citySpin, 100);
         spinButton.innerText = "STOP SPINNING!";
-        console.log("stop");
     } else if(spinButton.innerText === "STOP SPINNING!") {
-        clearInterval(continentSlotInterval);
-        clearInterval(countrySlotInterval);
-        clearInterval(citySlotInterval);
+        stopSpinner(continentSlotInterval);
+        fetchCountry(continentSlot.getAttribute("value"));
+        /*stopSpinner(countrySlotInterval);
+        stopSpinner(citySlotInterval);*/
         spinButton.innerText = "START SPINNING!";
     }
 });
+
+function stopSpinner (interval) {
+    clearInterval(interval);
+}

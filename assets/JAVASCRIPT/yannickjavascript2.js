@@ -1,6 +1,6 @@
-let dropDownInput = "europe";
+//let dropDownInput = "europe";
 
-fetchCountry(dropDownInput);
+//fetchCountry(dropDownInput);
 
 function fetchCountry(continent) {
     fetch("https://restcountries.eu/rest/v2/region/" + continent + "?fields=name;alpha2Code;capital")
