@@ -6,25 +6,84 @@ html {
   background-size: cover;
   font-family: 'Montserrat', sans-serif; }
 
+.table-tpl, .td-tpl {
+  border: 5px solid yellow;
+  padding: 2px; }
+
+.img-activity {
+  height: auto;
+  max-width: 150px; }
+
+#tbl-section {
+  height: 100vh; }
+
 .container-slotmachine {
-  width: 1000px;
   margin: auto;
   padding: 10px; }
 
+#container-logo {
+  text-indent: -100000px;
+  background-image: url("../images/timeoff-logo-18.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  height: 141px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 714px;
+  margin-top: 20px; }
+
+#countryImg {
+  height: auto;
+  max-width: 150px; }
+
+#cityImg {
+  height: auto;
+  max-width: 150px; }
+
+#table {
+  display: table;
+  text-align: center;
+  width: 80%;
+  margin: 3% auto 0;
+  border-collapse: separate; }
+
+.table_row {
+  display: table-row; }
+
 .first-section {
-  height: 100vh; }
+  height: 130vh; }
 
 table td {
-  text-align: center; }
+  text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px; }
 
 .rectangle {
   background-color: #f8582e;
   height: 370px;
-  width: 350px; }
+  width: 350px;
+  animation: pulse 1s infinite; }
 
+@keyframes pulse {
+  0% {
+    background-color: #f8582e; }
+  20% {
+    background-color: purple; }
+  40% {
+    background-color: red; }
+  60% {
+    background-color: yellow; }
+  80% {
+    background-color: #f8582e; }
+  100% {
+    background-color: purple; } }
 .results-named {
   font-family: "Fugaz One", cursive;
   color: yellow; }
+
+#container-button-play {
+  text-align: center;
+  padding-bottom: 50px; }
 
 .play-button {
   background-color: yellow;
@@ -33,18 +92,23 @@ table td {
   letter-spacing: 0.2em;
   color: #110d2b;
   font-family: "Fugaz One", cursive;
-  padding: 15px 150px; }
+  padding: 15px 150px;
+  cursor: pointer;
+  box-shadow: 0 9px rgba(0, 0, 0, 0.5); }
 
 .more-info-button {
   border: none;
-  border-bottom: 2px solid #f8582e;
   color: yellow;
   background-color: transparent;
-  font-size: 15px; }
+  font-size: 15px;
+  text-decoration: none; }
 
 #more-info {
   float: right;
   padding-right: 50px; }
+
+#resultsDisplay {
+  color: yellow; }
 
 .second-section {
   height: 100vh; }
@@ -54,6 +118,11 @@ h2 {
   font-family: "Fugaz One", cursive;
   color: yellow;
   border-bottom: 2px solid #f8582e; }
+
+#how-it-works {
+  width: 80%;
+  margin: 3% auto 0;
+  padding-top: 25%; }
 
 #how-it-works > p {
   color: yellow;
@@ -65,13 +134,39 @@ p > span {
 
 .start-spinning {
   border: none;
-  border-bottom: 2px solid #f8582e;
   color: yellow;
   background-color: transparent;
-  font-size: 15px; }
+  font-size: 15px;
+  text-decoration: none; }
 
 #start-spinning {
   float: right;
   padding-right: 50px; }
+
+a {
+  display: inline-block;
+  color: #f8582e;
+  text-decoration: none; }
+
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f8582e;
+  transition: width .3s; }
+
+a:hover::after {
+  width: 100%; }
+
+.play-button:hover {
+  background-color: #f8582e;
+  border-color: yellow; }
+
+.play-button:active {
+  background-color: #f8582e;
+  border-color: yellow;
+  box-shadow: 0 5px black;
+  transform: translateY(4px); }
 
 /*# sourceMappingURL=nicole.css.map */

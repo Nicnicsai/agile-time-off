@@ -7,8 +7,13 @@ $fugaz:'Fugaz One', cursive;
 $Montserrat: 'Montserrat', sans-serif;
 
 // color code for yellow still to be defined
+// to circle image
+// img {
+//  clip-path: circle(50%);
+//}
 
-//general
+//GENERAL
+
 html {
   background: url("../images/time-off-background-17.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -17,27 +22,80 @@ html {
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
 }
-// WHOLE CONTAINER
 
-.container-slotmachine {
+// TEMPLATE
 
-  width: 1000px;
-  margin: auto;
-  padding: 10px;
+.table-tpl , .td-tpl {
+  border: 5px solid yellow;
+  padding: 2px;
+}
 
+.img-activity {
+  height: auto;
+  max-width: 150px;
+}
+
+#tbl-section {
+  height: 100vh;
 }
 
 
+// WHOLE CONTAINER
+
+.container-slotmachine {
+  margin: auto;
+  padding: 10px;
+}
+
+#container-logo {
+  text-indent: -100000px;
+  background-image: url("../images/timeoff-logo-18.png");
+  background-size:contain;
+  background-repeat:no-repeat;
+  height: 141px;
+  width: 80%;
+  margin: 0 auto;
+  max-width: 714px;
+  margin-top: 20px;
+}
 
 
 //FIRST SECTION
+
+
+#countryImg {
+  height: auto;
+  max-width: 150px;
+}
+
+#cityImg {
+  height: auto;
+  max-width: 150px;
+}
+
+
+#table {
+  display: table;
+  text-align: center;
+  width: 80%;
+  margin: 3% auto 0;
+  border-collapse: separate;
+}
+
+.table_row {
+  display: table-row;
+}
+
+
 .first-section {
-  height: 100vh;
+  height: 130vh;
 }
 
 
 table td {
   text-align: center;
+  padding-top: 15px;
+  padding-bottom: 15px;
 }
 
 
@@ -45,13 +103,47 @@ table td {
   background-color: $orange;
   height: 370px;
   width: 350px;
+  animation: pulse 1s infinite;
 }
+
+//ANIMATION FOR RECTANGLES
+
+@keyframes pulse {
+  0% {
+    background-color: $orange;
+  }
+  20% {
+    background-color: purple;
+  }
+  40% {
+    background-color: red;
+  }
+  60% {
+    background-color: yellow;
+  }
+  80% {
+    background-color: $orange;
+  }
+  100% {
+    background-color: purple;
+  }
+
+}
+
+
+
+
+//END ANIMATION
 
 .results-named {
   font-family: $fugaz;
   color: yellow;
 }
 
+#container-button-play {
+  text-align: center;
+  padding-bottom: 50px;
+}
 
 
 .play-button {
@@ -63,19 +155,28 @@ table td {
   color: $blue-dark;
   font-family: $fugaz;
   padding: 15px 150px;
+  cursor: pointer;
+  box-shadow: 0 9px rgba(black, 0.5);
 }
 
 .more-info-button {
   border: none;
-  border-bottom: 2px solid $orange;
   color: yellow;
   background-color: transparent;
   font-size: 15px;
+  text-decoration: none;
 }
 
 #more-info {
   float:right;
   padding-right: 50px;
+
+}
+
+//TEMPLATE
+
+#resultsDisplay {
+  color: yellow;
 }
 
 //SECOND SECTION
@@ -89,6 +190,13 @@ h2 {
   font-family: $fugaz;
   color: yellow;
   border-bottom: 2px solid $orange;
+}
+
+#how-it-works {
+  width: 80%;
+  margin: 3% auto 0;
+  padding-top: 25%;
+
 }
 
 #how-it-works >p {
@@ -105,13 +213,50 @@ p > span {
 
 .start-spinning {
   border: none;
-  border-bottom: 2px solid $orange;
   color: yellow;
   background-color: transparent;
   font-size: 15px;
+  text-decoration: none;
 }
 
 #start-spinning {
   float:right;
   padding-right: 50px;
+}
+
+
+// HOVER ANIMATIONS
+
+//links
+a {
+  display: inline-block;
+  color: $orange;
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: $orange;
+  transition: width .3s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+//playbutton
+
+.play-button:hover {
+  background-color: $orange;
+  border-color: yellow;
+}
+
+.play-button:active {
+  background-color: $orange;
+  border-color: yellow;
+  box-shadow: 0 5px black;
+  transform: translateY(4px);
 }
