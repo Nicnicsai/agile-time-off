@@ -6,6 +6,10 @@ html {
   background-size: cover;
   font-family: 'Montserrat', sans-serif; }
 
+.table-tpl, .td-tpl {
+  border: 5px solid yellow;
+  padding: 2px; }
+
 .container-slotmachine {
   margin: auto;
   padding: 10px; }
@@ -20,6 +24,14 @@ html {
   margin: 0 auto;
   max-width: 714px;
   margin-top: 20px; }
+
+#countryImg {
+  height: auto;
+  max-width: 150px; }
+
+#cityImg {
+  height: auto;
+  max-width: 150px; }
 
 #table {
   display: table;
@@ -62,7 +74,6 @@ table td {
 
 .more-info-button {
   border: none;
-  border-bottom: 2px solid #f8582e;
   color: yellow;
   background-color: transparent;
   font-size: 15px;
@@ -72,7 +83,7 @@ table td {
   float: right;
   padding-right: 50px; }
 
-.resultsDisplay {
+#resultsDisplay {
   color: yellow; }
 
 .second-section {
@@ -98,7 +109,6 @@ p > span {
 
 .start-spinning {
   border: none;
-  border-bottom: 2px solid #f8582e;
   color: yellow;
   background-color: transparent;
   font-size: 15px;
@@ -107,5 +117,21 @@ p > span {
 #start-spinning {
   float: right;
   padding-right: 50px; }
+
+a {
+  display: inline-block;
+  color: #f8582e;
+  text-decoration: none; }
+
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: #f8582e;
+  transition: width .3s; }
+
+a:hover::after {
+  width: 100%; }
 
 /*# sourceMappingURL=nicole.css.map */

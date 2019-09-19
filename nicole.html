@@ -33,9 +33,15 @@
         <section class="container-results">
             <table id="table">
                 <tr class="results-images table_row">
-                    <td class="rectangle">&nbsp;</td>
-                    <td class="rectangle">&nbsp;</td>
-                    <td class="rectangle">&nbsp;</td>
+                    <td class="rectangle">
+                        <img id="continentImg" src="http://placehold.jp/150x150.png" alt="Image of continent">
+                    </td>
+                    <td class="rectangle">
+                        <img id="countryImg" src="http://placehold.jp/150x150.png" alt="Image of flag">
+                    </td>
+                    <td class="rectangle">
+                        <img id="cityImg" src="http://placehold.jp/150x150.png" alt="Image of city">
+                    </td>
                 </tr>
 
                 <tr class="results-named table_row">
@@ -46,7 +52,7 @@
             </table>
 
             <div id="container-button-play">
-                <button class="play-button">START SPINNING!</button>
+                <button id="play-button" class="play-button">START SPINNING!</button>
             </div>
         </section>
 
@@ -56,14 +62,39 @@
 
         <div id="resultsDisplay">
 
+            <!-- TEMPLATE OLD TEMPLATE-->
+
+            <!-- <template id="tpl-slotmachine">
+                 <ul class="tpl-results">
+                     <li><img src="" alt="Image of activity" class="img-activity"></li>
+                     <li><h4 class="title-activity">Insert title activity</h4></li>
+                     <li><p class="description">Insert description activity</p></li>
+                 </ul>
+             </template>-->
+
+            <!-- END TEMPLATE -->
+
             <!-- TEMPLATE -->
 
             <template id="tpl-slotmachine">
-                <ul class="tpl-results">
-                    <li><img src="" alt="Image of activity" class="img-activity"></li>
-                    <li><h4 class="title-activity">Insert title activity</h4></li>
-                    <li><p class="description">Insert description activity</p></li>
-                </ul>
+                <table id="table-tpl" class="tpl-results">
+                    <tr>
+                        <td class="td-tpl" ><img src="http://placehold.jp/150x150.png" alt="Image of activity" class="img-activity">
+                        </td>
+                        <td class="td-tpl"  rowspan="2"><p class="description">Insert description activity: Lorem ipsum dolor sit amet,
+                            consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna
+                            aliqua. Ut enim ad minim veniam,
+                            quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute
+                            irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur.
+                            Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit
+                            anim id est laborum. </p> <p> <a class="link" target="_blank">  </a> </p> </td>
+
+                    </tr>
+                    <tr>
+                        <td class="td-tpl" ><h4 class="title-activity">Insert title activity</h4></td>
+                    </tr>
+
+                </table>
             </template>
 
             <!-- END TEMPLATE -->
@@ -74,7 +105,6 @@
 
     </section>
 
-    <!--   HERE COMES TEMPLATE (ADD height: +-50vh)         -->
 
 
     <section class="second-section">
@@ -118,10 +148,13 @@
 <!-- BACK TO TOP BUTTON -->
 <a href="#container-logo" onclick="topFunction()" title="back to top" id="button"></a>
 
-<script src="assets/JAVASCRIPT/nicole.js" charset="UTF-8"></script>
+<script src="assets/JAVASCRIPT/apiKey.js" charset="UTF-8"></script>
+<script src="assets/JAVASCRIPT/Joost.js" charset="UTF-8"></script>
+<script src="assets/JAVASCRIPT/yannickjavascript2.js" charset="UTF-8"></script>
 
-<!-- BACK TO TOP BUTTON script -->
-<script>
+
+<!-- BACK TO TOP BUTTON script  FIX BUG-->
+<!--<script>
 
     var btn = $('#button');
 
@@ -131,7 +164,6 @@
         } else {
             btn.removeClass('show');
         }
-
     });
 
 
@@ -141,7 +173,7 @@
     });
 
 
-</script>
+</script>-->
 
 
 </body>

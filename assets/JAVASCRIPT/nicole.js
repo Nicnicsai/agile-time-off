@@ -14,7 +14,8 @@ var clon = temp.content.cloneNode(true); //clone floats around in memory
 
 document.getElementsByClassName("play-button")[0].addEventListener('click', function(){
 
-    document.getElementsByClassName("resultsDisplay")[0].appendChild(clon); // template cloned and put here
+    document.getElementById("resultsDisplay").appendChild(clon); // template cloned and put here
+    //console.log(document.getElementsByClassName("resultsDisplay")[0]);
 });
 
 

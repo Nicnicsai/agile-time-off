@@ -7,8 +7,13 @@ $fugaz:'Fugaz One', cursive;
 $Montserrat: 'Montserrat', sans-serif;
 
 // color code for yellow still to be defined
+// to circle image
+// img {
+//  clip-path: circle(50%);
+//}
 
-//general
+//GENERAL
+
 html {
   background: url("../images/time-off-background-17.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -17,6 +22,15 @@ html {
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
 }
+
+// TEMPLATE
+
+.table-tpl , .td-tpl {
+  border: 5px solid yellow;
+  padding: 2px;
+}
+
+
 // WHOLE CONTAINER
 
 .container-slotmachine {
@@ -38,6 +52,18 @@ html {
 
 
 //FIRST SECTION
+
+
+#countryImg {
+  height: auto;
+  max-width: 150px;
+}
+
+#cityImg {
+  height: auto;
+  max-width: 150px;
+}
+
 
 #table {
   display: table;
@@ -93,7 +119,6 @@ table td {
 
 .more-info-button {
   border: none;
-  border-bottom: 2px solid $orange;
   color: yellow;
   background-color: transparent;
   font-size: 15px;
@@ -108,7 +133,7 @@ table td {
 
 //TEMPLATE
 
-.resultsDisplay {
+#resultsDisplay {
   color: yellow;
 }
 
@@ -145,7 +170,6 @@ p > span {
 
 .start-spinning {
   border: none;
-  border-bottom: 2px solid $orange;
   color: yellow;
   background-color: transparent;
   font-size: 15px;
@@ -156,3 +180,28 @@ p > span {
   float:right;
   padding-right: 50px;
 }
+
+
+// HOVER ANIMATIONS
+
+//links
+a {
+  display: inline-block;
+  color: $orange;
+  text-decoration: none;
+}
+
+a::after {
+  content: '';
+  display: block;
+  width: 0;
+  height: 2px;
+  background: $orange;
+  transition: width .3s;
+}
+
+a:hover::after {
+  width: 100%;
+}
+
+//playbutton
