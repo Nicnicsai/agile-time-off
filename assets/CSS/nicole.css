@@ -28,6 +28,10 @@ html {
   height: auto;
   max-width: 150px; }
 
+#cityImg {
+  height: auto;
+  max-width: 150px; }
+
 #table {
   display: table;
   text-align: center;
