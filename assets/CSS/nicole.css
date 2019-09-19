@@ -32,6 +32,10 @@ html {
   max-width: 714px;
   margin-top: 20px; }
 
+#continentImg {
+  height: auto;
+  max-width: 150px; }
+
 #countryImg {
   height: auto;
   max-width: 150px; }
@@ -60,8 +64,10 @@ table td {
 
 .rectangle {
   background-color: #f8582e;
-  height: 370px;
-  width: 350px;
+  height: auto;
+  width: auto; }
+
+.animation {
   animation: pulse 1s infinite;
   animation-iteration-count: 3; }
 
@@ -171,7 +177,8 @@ a:hover::after {
 
 footer {
   padding-top: 20px;
-  color: rgba(248, 88, 46, 0.5); }
+  color: rgba(248, 88, 46, 0.5);
+  margin-left: 10%; }
 
 footer:hover {
   color: #f8582e; }
