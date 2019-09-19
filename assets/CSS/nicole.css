@@ -55,7 +55,7 @@ html {
   display: table-row; }
 
 .first-section {
-  height: 130vh; }
+  height: 100vh; }
 
 table td {
   text-align: center;
@@ -115,11 +115,15 @@ table td {
   padding-right: 50px; }
 
 #resultsDisplay {
-  color: yellow; }
+  color: yellow;
+  width: 80%;
+  text-align: center;
+  margin: auto; }
 
-/*.second-section {
-  height: 100vh;
-}*/
+#img-tpl {
+  width: 250px;
+  height: 200px; }
+
 h2 {
   font-weight: normal;
   font-family: "Fugaz One", cursive;
@@ -182,5 +186,17 @@ footer {
 
 footer:hover {
   color: #f8582e; }
+
+/* MEDIA QUERY FOR MOBILE */
+@media only screen and (max-width: 667px) {
+  #how-it-works > p {
+    font-size: 15px; }
+
+  a.start-spinning {
+    display: inline-block;
+    border-bottom: 2px solid #f8582e; }
+
+  a.more-info-button {
+    border-bottom: 2px solid #f8582e; } }
 
 /*# sourceMappingURL=nicole.css.map */
