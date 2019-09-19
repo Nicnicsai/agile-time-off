@@ -1,5 +1,6 @@
-
-let continentSlot = document.getElementById("continentImg");
+const continentSlot = document.getElementById("continentImg");
+const countrySlot = document.getElementById("countryImg");
+const citySlot = document.getElementById("cityImg");
 
 let continentArr = [
     "assets/images/Africa.png",
@@ -21,7 +22,7 @@ let contValArr = [
 
 let i = 0;
 function continentSpin() {
-    console.log(continentArr[i]);
+    //console.log(continentArr[i]);
     if (i < continentArr.length-1) {
         i++;
         continentSlot.setAttribute("value", contValArr[i]);
@@ -47,8 +48,6 @@ flagArr = [
     "assets/images/countryslot/NZ.svg",
     "assets/images/countryslot/Venezuela.svg"
 ];
-
-let countrySlot = document.getElementById("countryImg");
 
 let j=0;
 function countrySpin() {
@@ -76,8 +75,6 @@ cityArr = [
     "assets/images/cityslot/caracas.jpg"
 ];
 
-let citySlot = document.getElementById("cityImg");
-
 let k=0;
 function citySpin() {
     if (k < cityArr.length-1) {
@@ -92,9 +89,11 @@ function citySpin() {
 
 
 let spinButton = document.getElementById("play-button");
-
+let results = document.getElementById("resultsDisplay");
+const orgValResults = results.innerHTML;
 spinButton.addEventListener("click", function () {
     if (spinButton.innerText === "START SPINNING!") {
+        results.innerHTML = orgValResults;
         continentSlotInterval = setInterval(continentSpin, 100);
         countrySlotInterval = setInterval(countrySpin, 100);
         citySlotInterval = setInterval(citySpin, 100);
@@ -102,8 +101,8 @@ spinButton.addEventListener("click", function () {
     } else if(spinButton.innerText === "STOP SPINNING!") {
         stopSpinner(continentSlotInterval);
         fetchCountry(continentSlot.getAttribute("value"));
-        /*stopSpinner(countrySlotInterval);
-        stopSpinner(citySlotInterval);*/
+        stopSpinner(countrySlotInterval);
+        stopSpinner(citySlotInterval);
         spinButton.innerText = "START SPINNING!";
     }
 });
@@ -111,3 +110,7 @@ spinButton.addEventListener("click", function () {
 function stopSpinner (interval) {
     clearInterval(interval);
 }
+
+/*function slotAnimation {
+    document.querySelectorAll("div #rectangle").setAttribute(class = "rectangle animation")
+}*/
