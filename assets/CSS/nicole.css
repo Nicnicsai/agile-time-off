@@ -24,6 +24,10 @@ html {
   max-width: 714px;
   margin-top: 20px; }
 
+#countryImg {
+  height: auto;
+  max-width: 150px; }
+
 #table {
   display: table;
   text-align: center;
