@@ -4,6 +4,10 @@ const ACTIVITIES_RADIUS = 5000; // radius from origin point in which to search f
 const RATING = 2; //minimal rating of PoI, range from 1 (lowest) - 3 (highest), possible to limit to heritage PoI by using 1h - 3h
 const MAX_RESULTS = 2; //the maximum amount of returned results
 const IMG_URL_PREPEND = "https://api-gateway-becode.herokuapp.com/?goto=";
+//const IMG_URL_PT1 = "https://";
+const IMG_URL_PT2 = ".wikipedia.org/w/api.php?action=query&format=json&formatversion=2&utf8=&prop=pageimages|pageterms&piprop=original&titles=";
+const IMG_URL_PT1_LENGTH = "https://fr".length;
+const IMG_URL_PT3_NEGATIVE_LENGTH = "https://fr.wikipedia.org/wiki/".length;
 
 //ACTIVITY TYPES
 let kinds = "&kinds=cultural"; //setting of kinds
@@ -89,16 +93,40 @@ function getActivityInfo(activityXid){
             return response.json();
         })
         .then(function (activity) {
-            console.log("NEW ACTIVITY");
+            /*console.log("NEW ACTIVITY");
             console.log(activity);
             console.log(activity.name);
             console.log(activity.image);
             console.log(activity.url);
             console.log(activity.wikipedia_extracts.title);
-            console.log(activity.wikipedia_extracts.text);
+            console.log(activity.wikipedia_extracts.text);*/
 
-            fillTemplate(activity.name, activity.image, activity.wikipedia_extracts.text, activity.url)
+            getWikiImgLink(activity);
+
+            //fillTemplate(activity.name, activity.image, activity.wikipedia_extracts.text, activity.url)
         })
+}
+function getWikiImgLink(activity) {
+    //console.log("wiki link");
+    //console.log(activity.wikipedia);
+    let imgUrlPt1 = activity.wikipedia.substr(0,IMG_URL_PT1_LENGTH);
+    let imgUrlPt3 = activity.wikipedia.substr(IMG_URL_PT3_NEGATIVE_LENGTH, activity.wikipedia.length-IMG_URL_PT3_NEGATIVE_LENGTH);
+    let fetchString = IMG_URL_PREPEND + encodeURIComponent(imgUrlPt1 + IMG_URL_PT2 + imgUrlPt3);
+    //console.log(fetchString);
+
+    fetch(fetchString)
+        .then(function (response) {
+            return response.json();
+        })
+        .then(function (wiki) {
+            let imgUrl = wiki.query.pages[0].original.source;
+
+            console.log("NEW ACTIVITY");
+            console.log(activity.name);
+            console.log(imgUrl);
+            fillTemplate(activity.name, imgUrl, activity.wikipedia_extracts.text, activity.url)
+        })
+
 }
 
 function fillTemplate(title, imgUrl, description, url) {
@@ -107,11 +135,11 @@ function fillTemplate(title, imgUrl, description, url) {
     //Need to prepend img link with : https://api-gateway-becode.herokuapp.com/?goto=
     //In order to prevent CORB warnings / conflicts
     //let adjustedImgUrl = IMG_URL_PREPEND.concat(encodeURI(imgUrl));
-    let adjustedImgUrl = imgUrl;
-    console.log(adjustedImgUrl);
+    //let adjustedImgUrl = imgUrl;
+    //console.log(adjustedImgUrl);
 
     template.content.querySelector(".title-activity").innerText = title;
-    template.content.querySelector(".img-activity").setAttribute("src", adjustedImgUrl);
+    template.content.querySelector(".img-activity").setAttribute("src", imgUrl);
     template.content.querySelector(".description").innerText = description;
 
     if (url !== undefined && url !== null) {
