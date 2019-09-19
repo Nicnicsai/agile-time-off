@@ -7,8 +7,13 @@ $fugaz:'Fugaz One', cursive;
 $Montserrat: 'Montserrat', sans-serif;
 
 // color code for yellow still to be defined
+// to circle image
+// img {
+//  clip-path: circle(50%);
+//}
 
-//general
+//GENERAL
+
 html {
   background: url("../images/time-off-background-17.jpg") no-repeat center center fixed;
   -webkit-background-size: cover;
@@ -17,6 +22,15 @@ html {
   background-size: cover;
   font-family: 'Montserrat', sans-serif;
 }
+
+// TEMPLATE
+
+.table-tpl , .td-tpl {
+  border: 2px solid yellow;
+}
+
+
+
 // WHOLE CONTAINER
 
 .container-slotmachine {
@@ -155,4 +169,11 @@ p > span {
 #start-spinning {
   float:right;
   padding-right: 50px;
+}
+
+
+// hover links
+
+a:hover {
+  border: 2px solid #e9ecef;
 }

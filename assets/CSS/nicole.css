@@ -6,6 +6,9 @@ html {
   background-size: cover;
   font-family: 'Montserrat', sans-serif; }
 
+.table-tpl, .td-tpl {
+  border: 2px solid yellow; }
+
 .container-slotmachine {
   margin: auto;
   padding: 10px; }
@@ -107,5 +110,8 @@ p > span {
 #start-spinning {
   float: right;
   padding-right: 50px; }
+
+a:hover {
+  border: 2px solid #e9ecef; }
 
 /*# sourceMappingURL=nicole.css.map */
