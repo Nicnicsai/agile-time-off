@@ -91,16 +91,27 @@ function citySpin() {
 let spinButton = document.getElementById("play-button");
 let results = document.getElementById("resultsDisplay");
 const orgValResults = results.innerHTML;
+
 spinButton.addEventListener("click", function () {
     if (spinButton.innerText === "START SPINNING!") {
         results.innerHTML = orgValResults;
+        document.getElementById("continent-text").innerText = "CONTINENT";
+        document.getElementById("country-text").innerText = "COUNTRY";
+        document.getElementById("city-text").innerText = "CITY";
+
+        stopAnimation();
+
         continentSlotInterval = setInterval(continentSpin, 100);
         countrySlotInterval = setInterval(countrySpin, 100);
         citySlotInterval = setInterval(citySpin, 100);
         spinButton.innerText = "STOP SPINNING!";
     } else if(spinButton.innerText === "STOP SPINNING!") {
         stopSpinner(continentSlotInterval);
+
+        slotAnimation();
+
         fetchCountry(continentSlot.getAttribute("value"));
+        document.getElementById("continent-text").innerText = (continentSlot.getAttribute("value")).toUpperCase();
         stopSpinner(countrySlotInterval);
         stopSpinner(citySlotInterval);
         spinButton.innerText = "START SPINNING!";
@@ -111,6 +122,14 @@ function stopSpinner (interval) {
     clearInterval(interval);
 }
 
-/*function slotAnimation {
-    document.querySelectorAll("div #rectangle").setAttribute(class = "rectangle animation")
-}*/
+function slotAnimation() {
+    document.querySelectorAll(".rectangle")[0].setAttribute("class", "rectangle animation");
+    document.querySelectorAll(".rectangle")[1].setAttribute("class", "rectangle animation");
+    document.querySelectorAll(".rectangle")[2].setAttribute("class", "rectangle animation");
+}
+
+function stopAnimation() {
+    document.querySelectorAll(".rectangle")[0].setAttribute("class", "rectangle");
+    document.querySelectorAll(".rectangle")[1].setAttribute("class", "rectangle");
+    document.querySelectorAll(".rectangle")[2].setAttribute("class", "rectangle");
+}

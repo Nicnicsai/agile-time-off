@@ -9,7 +9,11 @@ function fetchCountry(continent) {
         })
         .then(function (countryInfo) {
             randomCountry = countryInfo[Math.floor((Math.random() * countryInfo.length))];
+
             countrySlot.src = randomCountry.flag;
+            document.getElementById("country-text").innerText = randomCountry.name.toUpperCase();
+            document.getElementById("city-text").innerText = randomCountry.capital.toUpperCase();
+
             fetchCountryDescription(randomCountry.name);
             fetchAttractions(randomCountry.name, randomCountry.capital);
             getFunStuff(randomCountry.capital);
@@ -32,12 +36,13 @@ function fetchCountryDescription(country) {
 function fetchAttractions(country, capital) {
     fetch("https://api-gateway-becode.herokuapp.com/?goto=https://atlas-obscura-api.herokuapp.com/api/atlas/attractions/" + country + "?city=" + capital + "&limit=10")
         .then(function (obscuraresponse) {
-            return obscuraresponse.json();
+            return obscuraresponse.json()
         })
         .then(function (obscuraData) {
             console.log(obscuraData);
-            console.log(obscuraData.Attractions[0].img);
+            /*console.log(obscuraData.Attractions[0].img);
             console.log(obscuraData.Attractions[0].description);
+            citySlot.src = obscuraData.Attractions[0].img;*/
 
             fillTemplate(obscuraData.Attractions[0].name, obscuraData.Attractions[0].img, obscuraData.Attractions[0].description, null)
         })
