@@ -10,7 +10,7 @@ const IMG_URL_PT1_LENGTH = "https://fr".length;
 const IMG_URL_PT3_NEGATIVE_LENGTH = "https://fr.wikipedia.org/wiki/".length;
 
 //ACTIVITY TYPES
-let kinds = "&kinds=cultural"; //setting of kinds
+let kinds = "&kinds=cultural,food"; //setting of kinds
 kinds = ""; //resetting of kinds
 
 //FUNCTIONS
@@ -124,6 +124,8 @@ function getWikiImgLink(activity) {
             console.log("NEW ACTIVITY");
             console.log(activity.name);
             console.log(imgUrl);
+
+            citySlot.src = imgUrl;
             fillTemplate(activity.name, imgUrl, activity.wikipedia_extracts.text, activity.url)
         })
 
