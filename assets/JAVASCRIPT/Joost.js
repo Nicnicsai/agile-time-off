@@ -3,6 +3,8 @@ const FETCH_STRING_PREPEND = "http://api.opentripmap.com/0.1/en/places/"; //prep
 const ACTIVITIES_RADIUS = 5000; // radius from origin point in which to search for activities (culture, restaurants, sports, ...)
 const RATING = 2; //minimal rating of PoI, range from 1 (lowest) - 3 (highest), possible to limit to heritage PoI by using 1h - 3h
 const MAX_RESULTS = 2; //the maximum amount of returned results
+const IMG_URL_PREPEND = "https://api-gateway-becode.herokuapp.com/?goto=";
+
 //ACTIVITY TYPES
 let kinds = "&kinds=cultural"; //setting of kinds
 kinds = ""; //resetting of kinds
@@ -102,19 +104,23 @@ function getActivityInfo(activityXid){
 function fillTemplate(title, imgUrl, description, url) {
     let template = document.querySelector("#tpl-slotmachine");
     let placementLocation = document.querySelector("#resultsDisplay");
-
-    let node = document.createElement("p");
-    let urlnode = document.createTextNode(url);         // Create a text node
-    node.appendChild(urlnode);
-
-    template.content.querySelector(".title-activity").innerText = title;
-    template.content.querySelector(".img-activity").setAttribute("src", imgUrl);
-    template.content.querySelector(".description").innerText = description;
-    template.content.querySelector(".description").appendChild(node);
-
     //Need to prepend img link with : https://api-gateway-becode.herokuapp.com/?goto=
     //In order to prevent CORB warnings / conflicts
+    //let adjustedImgUrl = IMG_URL_PREPEND.concat(encodeURI(imgUrl));
+    let adjustedImgUrl = imgUrl;
+    console.log(adjustedImgUrl);
 
+    template.content.querySelector(".title-activity").innerText = title;
+    template.content.querySelector(".img-activity").setAttribute("src", adjustedImgUrl);
+    template.content.querySelector(".description").innerText = description;
+
+    if (url !== undefined && url !== null) {
+        template.content.querySelector(".link").setAttribute("href", url);
+        template.content.querySelector(".link").innerText = url;
+    } else {
+        template.content.querySelector(".link").setAttribute("href", "");
+        template.content.querySelector(".link").innerText = "";
+    }
 
     let clone = template.content.cloneNode(true);
     placementLocation.appendChild(clone);

@@ -37,6 +37,8 @@ function fetchAttractions(country, capital) {
             console.log(obscuraData);
             console.log(obscuraData.Attractions[0].img);
             console.log(obscuraData.Attractions[0].description);
+
+            fillTemplate(obscuraData.Attractions[0].name, obscuraData.Attractions[0].img, obscuraData.Attractions[0].description, null)
         })
 }
 
