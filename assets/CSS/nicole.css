@@ -10,6 +10,13 @@ html {
   border: 5px solid yellow;
   padding: 2px; }
 
+.img-activity {
+  height: auto;
+  max-width: 150px; }
+
+#tbl-section {
+  height: 100vh; }
+
 .container-slotmachine {
   margin: auto;
   padding: 10px; }
@@ -54,14 +61,30 @@ table td {
 .rectangle {
   background-color: #f8582e;
   height: 370px;
-  width: 350px; }
+  width: 350px;
+  animation: pulse 1s infinite;
+  animation-iteration-count: 3; }
 
+@keyframes pulse {
+  0% {
+    background-color: #f8582e; }
+  20% {
+    background-color: purple; }
+  40% {
+    background-color: red; }
+  60% {
+    background-color: yellow; }
+  80% {
+    background-color: #f8582e; }
+  100% {
+    background-color: purple; } }
 .results-named {
   font-family: "Fugaz One", cursive;
   color: yellow; }
 
 #container-button-play {
-  text-align: center; }
+  text-align: center;
+  padding-bottom: 50px; }
 
 .play-button {
   background-color: yellow;
@@ -70,7 +93,9 @@ table td {
   letter-spacing: 0.2em;
   color: #110d2b;
   font-family: "Fugaz One", cursive;
-  padding: 15px 150px; }
+  padding: 15px 150px;
+  cursor: pointer;
+  box-shadow: 0 9px rgba(0, 0, 0, 0.5); }
 
 .more-info-button {
   border: none;
@@ -86,9 +111,9 @@ table td {
 #resultsDisplay {
   color: yellow; }
 
-.second-section {
-  height: 100vh; }
-
+/*.second-section {
+  height: 100vh;
+}*/
 h2 {
   font-weight: normal;
   font-family: "Fugaz One", cursive;
@@ -133,5 +158,22 @@ a::after {
 
 a:hover::after {
   width: 100%; }
+
+.play-button:hover {
+  background-color: #f8582e;
+  border-color: yellow; }
+
+.play-button:active {
+  background-color: #f8582e;
+  border-color: yellow;
+  box-shadow: 0 5px black;
+  transform: translateY(4px); }
+
+footer {
+  padding-top: 20px;
+  color: rgba(248, 88, 46, 0.5); }
+
+footer:hover {
+  color: #f8582e; }
 
 /*# sourceMappingURL=nicole.css.map */

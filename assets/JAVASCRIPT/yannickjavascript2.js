@@ -1,17 +1,18 @@
-let dropDownInput = "europe";
+//let dropDownInput = "europe";
 
-fetchCountry(dropDownInput);
+//fetchCountry(dropDownInput);
 
 function fetchCountry(continent) {
-    fetch("https://restcountries.eu/rest/v2/region/" + continent + "?fields=name;alpha2Code;capital")
+    fetch("https://restcountries.eu/rest/v2/region/" + continent + "?fields=name;alpha2Code;capital;flag")
         .then(function (response) {
             return response.json();
         })
         .then(function (countryInfo) {
             randomCountry = countryInfo[Math.floor((Math.random() * countryInfo.length))];
+            countrySlot.src = randomCountry.flag;
             fetchCountryDescription(randomCountry.name);
             fetchAttractions(randomCountry.name, randomCountry.capital);
-            getFunStuff(randomCountry.capital)
+            getFunStuff(randomCountry.capital);
         })
 }
 
