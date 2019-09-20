@@ -1,4 +1,3 @@
-## Logo
 ![Logo Time Off](https://raw.githubusercontent.com/Nicnicsai/agile-time-off/master/assets/images/timeoff-logo-18.png)
 
 
