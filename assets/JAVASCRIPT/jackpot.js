@@ -1,8 +1,13 @@
+//CONSTANTS
+//slot assignment
 const continentSlot = document.getElementById("continentImg");
 const countrySlot = document.getElementById("countryImg");
 const citySlot = document.getElementById("cityImg");
-
-let continentArr = [
+const spinButton = document.getElementById("play-button");
+const results = document.getElementById("resultsDisplay");
+const orgValResults = results.innerHTML;
+//Array of continent images
+const continentArr = [
     "assets/images/Africa.png",
     "assets/images/Asia.png",
     "assets/images/Europe.png",
@@ -10,8 +15,8 @@ let continentArr = [
     "assets/images/Oceania.png",
     "assets/images/SouthAmerica.png"
 ];
-
-let contValArr = [
+//Array of continent names
+const contValArr = [
     "africa",
     "asia",
     "europe",
@@ -20,20 +25,12 @@ let contValArr = [
     "americas"
 ];
 
-let i = 0;
-function continentSpin() {
-    //console.log(continentArr[i]);
-    if (i < continentArr.length-1) {
-        i++;
-        continentSlot.setAttribute("value", contValArr[i]);
-        continentSlot.src = continentArr[i];
-    } else if (i === continentArr.length-1) {
-        i = 0;
-        continentSlot.setAttribute("value", contValArr[i]);
-        continentSlot.src = continentArr[i];
-    }
-}
+//Global variables (iterators & counters)
+let i = 0,
+    j = 0,
+    k = 0;
 
+//Set up the array of flags, just to spin through
 flagArr = [
     "assets/images/countryslot/Zimbabwe.svg",
     "assets/images/countryslot/Japan.svg",
@@ -48,18 +45,7 @@ flagArr = [
     "assets/images/countryslot/NZ.svg",
     "assets/images/countryslot/Venezuela.svg"
 ];
-
-let j=0;
-function countrySpin() {
-    if (j < flagArr.length-1) {
-        j++;
-        countrySlot.src = flagArr[j];
-    } else if (j === flagArr.length-1) {
-        j = 0;
-        countrySlot.src = flagArr[j];
-    }
-}
-
+//Set up the array of city images, just to spin through
 cityArr = [
     "assets/images/cityslot/harare.jpg",
     "assets/images/cityslot/tokyo.jpg",
@@ -75,7 +61,31 @@ cityArr = [
     "assets/images/cityslot/caracas.jpg"
 ];
 
-let k=0;
+//"Spin" through the continents
+function continentSpin() {
+    if (i < continentArr.length-1) {
+        i++;
+        continentSlot.setAttribute("value", contValArr[i]);
+        continentSlot.src = continentArr[i];
+    } else if (i === continentArr.length-1) {
+        i = 0; //reset i
+        continentSlot.setAttribute("value", contValArr[i]);
+        continentSlot.src = continentArr[i];
+    }
+}
+
+//"Spin" through the countries
+function countrySpin() {
+    if (j < flagArr.length-1) {
+        j++;
+        countrySlot.src = flagArr[j];
+    } else if (j === flagArr.length-1) {
+        j = 0;
+        countrySlot.src = flagArr[j];
+    }
+}
+
+//"Spin" through the cities
 function citySpin() {
     if (k < cityArr.length-1) {
         k++;
@@ -86,12 +96,7 @@ function citySpin() {
     }
 }
 
-
-
-let spinButton = document.getElementById("play-button");
-let results = document.getElementById("resultsDisplay");
-const orgValResults = results.innerHTML;
-
+//Run upon clicking of the SPIN button
 spinButton.addEventListener("click", function () {
     if (spinButton.innerText === "START SPINNING!") {
         results.innerHTML = orgValResults;
@@ -118,16 +123,19 @@ spinButton.addEventListener("click", function () {
     }
 });
 
+//Stops the spinning of a slot by clearing the interval
 function stopSpinner (interval) {
     clearInterval(interval);
 }
 
+//Starts the slot animation (blinking through the animation class)
 function slotAnimation() {
     document.querySelectorAll(".rectangle")[0].setAttribute("class", "rectangle animation");
     document.querySelectorAll(".rectangle")[1].setAttribute("class", "rectangle animation");
     document.querySelectorAll(".rectangle")[2].setAttribute("class", "rectangle animation");
 }
 
+//Stops the slot animation (blinking through the animation class)
 function stopAnimation() {
     document.querySelectorAll(".rectangle")[0].setAttribute("class", "rectangle");
     document.querySelectorAll(".rectangle")[1].setAttribute("class", "rectangle");
