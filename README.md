@@ -1,4 +1,4 @@
-![Logo Time Off](https://raw.githubusercontent.com/Nicnicsai/agile-time-off/master/assets/images/timeoff-logo-18.png)
+[![Logo Time Off](https://raw.githubusercontent.com/Nicnicsai/agile-time-off/master/assets/images/timeoff-logo-18.png)](https://nicnicsai.github.io/agile-time-off/index.html)
 
 
 
@@ -11,9 +11,8 @@ Just like with a regular slotmachine, you *never* know what to expect, everythin
 ## How does it work?
 When spinning the slotmachine you get a city in a country depending on a *random* continent. You also get unique and interesting experiences in the area. 
 We fetch all this information from 4 different API's, to deliver the best results in a beautiful and easy way to read.
-https://nicnicsai.github.io/agile-time-off/index.html
 
 
 ## screenshot of slotmachine
-![Slotmachine](https://raw.githubusercontent.com/Nicnicsai/agile-time-off/master/assets/images/timeslot-screenshot.png)
+[![Slotmachine](https://raw.githubusercontent.com/Nicnicsai/agile-time-off/master/assets/images/timeslot-screenshot.png)](https://nicnicsai.github.io/agile-time-off/index.html)
 
