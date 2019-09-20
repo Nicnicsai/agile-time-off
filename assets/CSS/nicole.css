@@ -34,7 +34,9 @@ html {
 
 #continentImg {
   height: auto;
-  max-width: 150px; }
+  max-width: 150px;
+  max-height: 130px;
+}
 
 #countryImg {
   height: auto;
