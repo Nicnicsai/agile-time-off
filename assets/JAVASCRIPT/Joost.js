@@ -25,7 +25,6 @@ function fetchCoordinates(fetchString){
             return response.json();
         })
         .then(function (city) {
-            console.log(city);//show city
             let lon = city.lon;
             let lat = city.lat;
             fetchActivities(lon, lat);
@@ -72,11 +71,6 @@ function getWikiImgLink(activity) {
         })
         .then(function (wiki) {
             let imgUrl = wiki.query.pages[0].original.source;
-
-            console.log("NEW ACTIVITY");
-            console.log(activity.name);
-            console.log(imgUrl);
-
             citySlot.src = imgUrl;
             fillTemplate(activity.name, imgUrl, activity.wikipedia_extracts.text, activity.url)
         })
