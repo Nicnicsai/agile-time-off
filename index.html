@@ -2,240 +2,94 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>Travelling Goals</title>
+    <title>Time Off slotmachine</title>
+    <!-- google analytics -->
     <script async src="https://www.googletagmanager.com/gtag/js?id=UA-148155601-1"></script>
-    <script>window.dataLayer = window.dataLayer || [];
-
-    function gtag() {
-        dataLayer.push(arguments);
-    }
-
-    gtag('js', new Date());
-    gtag('config', 'UA-148155601-1', {'optimize_id': 'GTM-NB6JLKL'});</script>
-
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,900" rel="stylesheet">
-    <!--    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css"-->
-    <!--          integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">-->
-    <link rel="stylesheet" href="assets/CSS/bootstrap.css">
-    <link rel="stylesheet" href="assets/CSS/time-off.css">
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() {
+            dataLayer.push(arguments);
+        }
+        gtag('js', new Date());
+        gtag('config', 'UA-148155601-1', {'optimize_id': 'GTM-NB6JLKL'});
+    </script>
+    <!-- END google analytics -->
+    <!-- FAVICON -->
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <!-- END FAVICON -->
+    <link href="https://fonts.googleapis.com/css?family=Fugaz+One|Montserrat:400,400i,600,700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="assets/CSS/nicole.css">
+    <link rel="stylesheet" href="assets/CSS/normalized.css">
 </head>
+<!-- TEMPLATES -->
+<template id="tpl-slotmachine">
+    <table id="table-tpl" class="tpl-results">
+        <tr>
+            <td id="img-tpl" class="td-tpl">
+                <img id="image-template" src="http://placehold.jp/150x150.png"
+                     alt="Image of activity"
+                     class="img-activity">
+            </td>
+            <td class="td-tpl" rowspan="2">
+                <p class="description"></p>
+                <p>
+                    <a class="link" target="_blank"></a>
+                </p>
+            </td>
+        </tr>
+        <tr>
+            <td class="td-tpl">
+                <h4 class="title-activity"></h4>
+            </td>
+        </tr>
+    </table>
+</template>
+<!-- END TEMPLATES -->
 <body>
-<header>
-
-    <h2>Travelling Goals</h2>
-</header>
-
-
-<!--<section class="container-results">-->
-<!--    <table>-->
-<!--        <tr class="results-images">-->
-<!--            <td>-->
-<!--                <div class="rectangle"></div>-->
-<!--            </td>-->
-<!--            <td>-->
-<!--                <div class="rectangle"></div>-->
-<!--            </td>-->
-<!--            <td>-->
-<!--                <div class="rectangle"></div>-->
-<!--            </td>-->
-<!--        </tr>-->
-
-<!--        <tr class="results-named">-->
-<!--            <td id="continent-text">CONTINENT</td>-->
-<!--            <td id="country-text">COUNTRY</td>-->
-<!--            <td id="city-text">CITY</td>-->
-<!--        </tr>-->
-<!--    </table>-->
-
-<!--    <div id="container-button-play">-->
-<!--        <button class="play-button">START SPINNING!</button>-->
-<!--    </div>-->
-<!--</section>-->
-
-
-<div id="randomize">
-    <div class="container">
-        <h1>Randomize your stuff!</h1>
-
-        <div class="row">
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine1" class="randomizeMachine">
-                        <div><img src="assets/images/Africa.png"/></div>
-                        <div><img src="assets/images/Asia.png"/></div>
-                        <div><img src="assets/images/Europe.png"/></div>
-                        <div><img src="assets/images/Oceania.png"/></div>
-                        <div><img src="assets/images/SouthAmerica.png"/></div>
-                        <div><img src="assets/images/NorthAmerica.png"/></div>
-
-                    </div>
+    <section class="container-slotmachine">
+        <section class="first-section">
+            <div id="more-info">
+                <a href="howitworks.html" class="more-info-button">More info</a>
+            </div>
+            <h1 id="container-logo">Time off Slotmachine</h1>
+            <section class="container-results">
+                <table id="table">
+                    <tr class="results-images table_row">
+                        <td class="rectangle">
+                            <img id="continentImg" src="assets/images/airplane.png" alt="Image of continent">
+                        </td>
+                        <td class="rectangle">
+                            <img id="countryImg" src="assets/images/airplane.png" alt="Image of flag">
+                        </td>
+                        <td class="rectangle">
+                            <img id="cityImg" src="assets/images/airplane.png" alt="Image of city">
+                        </td>
+                    </tr>
+                    <tr class="results-named table_row">
+                        <td id="continent-text">CONTINENT</td>
+                        <td id="country-text">COUNTRY</td>
+                        <td id="city-text">CITY</td>
+                    </tr>
+                </table>
+                <div id="container-button-play">
+                    <button id="play-button" class="play-button">START SPINNING!</button>
                 </div>
-                <div id="machine1Result" class="col-xs-4 machineResult">Index: 0</div>
+            </section>
+            <div id="resultsDisplay">
+                <!-- Template will be appended here -->
             </div>
-
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine2" class="randomizeMachine">
-                        <div><img src="assets/images/Africa.png"/></div>
-                        <div><img src="assets/images/Asia.png"/></div>
-                        <div><img src="assets/images/Europe.png"/></div>
-                        <div><img src="assets/images/Oceania.png"/></div>
-                        <div><img src="assets/images/SouthAmerica.png"/></div>
-                        <div><img src="assets/images/NorthAmerica.png"/></div>
-
-                    </div>
-                </div>
-                <div id="machine2Result" class="col-xs-4 machineResult">Index: 1</div>
-            </div>
-
-            <div class="col-sm-4">
-                <div>
-                    <div id="machine3" class="randomizeMachine">
-                        <div><img src="assets/images/Africa.png"/></div>
-                        <div><img src="assets/images/Asia.png"/></div>
-                        <div><img src="assets/images/Europe.png"/></div>
-                        <div><img src="assets/images/Oceania.png"/></div>
-                        <div><img src="assets/images/SouthAmerica.png"/></div>
-                        <div><img src="assets/images/NorthAmerica.png"/></div>
-
-                    </div>
-                </div>
-                <div id="machine3Result" class="col-xs-4 machineResult">Index: 2</div>
-            </div>
-
-            <div class="btn-group btn-group-justified" role="group">
-                <button id="randomizeButton" type="button" class="btn btn-danger btn-lg">Shuffle</button>
-            </div>
-        </div>
-
-
-        <div class="container">
-
-
-            <br/><br/>
-
-            <span class="custom-dropdown big">
-    <select>
-        <option id="africa">AFRICA</option>
-        <option id="asia">ASIA</option>
-        <option id="eu">EUROPE</option>
-        <option id="Oceania">Oceania</option>
-        <option id="Americas">Americas</option>
-
-    </select>
-</span>
-        </div>
-
-
-        <!--<div>-->
-
-        <!--    <li class="nav-item dropdown">-->
-        <!--        <a href="#" id="menu" data-toggle="dropdown" class="nav-link dropdown-toggle">Dropdown</a>-->
-        <!--        <ul class="dropdown-menu">-->
-        <!--            <li class="dropdown-item dropdown-submenu">-->
-        <!--                <a href="#" data-toggle="dropdown" class="dropdown-toggle">Submenu-1</a>-->
-
-
-        <!--            </li>-->
-        <!--        </ul>-->
-        <!--    </li>-->
-
-        <!--</div>-->
-
-
-        <div class="inputsection">
-            <form>
-                City name: <label>
-                <input type="text" id="city" value="Paris">
-            </label><br>
-                <button type="button" id="run">click here</button>
-            </form>
-        </div>
-
-
-        <!--<div id="table">-->
-
-        <!--    <div id="map"  >-->
-
-        <!--        <table>-->
-        <!--            <tr>-->
-        <!--                <th>-->
-        <!--                    <div id="cont"></div>-->
-
-
-        <!--                </th>-->
-
-        <!--                <th>-->
-        <!--                    <div id="cityname"></div>-->
-
-        <!--                </th>-->
-
-        <!--                <th>-->
-        <!--                    <div id="town"></div>-->
-
-        <!--                </th>-->
-        <!--            </tr>-->
-
-
-        <!--        </table>-->
-        <!--    </div>-->
-
-
-        <!--<template>-->
-
-        <div class="row">
-            <div class="col-sm-4"><h2 id="city-name"></h2></div>
-            <div class="col-sm-4"><img src="" id="city-img" alt="city pic"></div>
-            <div class="col-sm-4"><p id="city-info"></p></div>
-        </div>
-        <!--</template>-->
-
-
-        <!--    <div id="result" >-->
-
-
-        <!--        <table>-->
-        <!--            <tr>-->
-        <!--                <th>-->
-        <!--                    <div id="info"></div>-->
-        <!--                    <div id="city"></div>-->
-
-        <!--                </th>-->
-
-        <!--                <th>-->
-        <!--                    <div id="activity"></div>-->
-        <!--                    <h1 id="sport"></h1>-->
-        <!--                    <div id="food"></div>-->
-        <!--                    <div id="cultural"></div>-->
-        <!--                </th>-->
-
-        <!--                <th>-->
-
-
-        <!--                </th>-->
-        <!--            </tr>-->
-
-
-        <!--        </table>-->
-        <!--    </div>-->
-
-
-        <div class="bg"></div>
-
-        <script src="http://code.jquery.com/jquery-3.1.1.slim.min.js"
-                integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n"
-                crossorigin="anonymous"></script>
-        <script src="http://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js"
-                integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb"
-                crossorigin="anonymous"></script>
-        <script src="http://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js"
-                integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn"
-                crossorigin="anonymous"></script>
-        <script src="assets/JAVASCRIPT/jquery.slotmachine.js" charset="UTF-8"></script>
-        <script src="assets/JAVASCRIPT/time-off.js" charset="UTF-8"></script>
-
-    </div>
-</div>
+            <!-- FOOTER -->
+            <footer id="footer-slotmachine" class="footer-text">
+                <span>  2019 &copy;Time Off Slotmachine, Inc. </span>
+            </footer>
+            <!-- END FOOTER -->
+        </section>
+    </section>
+    <!-- SCRIPTS -->
+    <script src="assets/JAVASCRIPT/apiKey.js" charset="UTF-8"></script>
+    <script src="assets/JAVASCRIPT/jackpot.js" charset="UTF-8"></script>
+    <script src="assets/JAVASCRIPT/Joost.js" charset="UTF-8"></script>
+    <script src="assets/JAVASCRIPT/yannickjavascript2.js" charset="UTF-8"></script>
+    <!-- END SCRIPTS -->
 </body>
 </html>
-
