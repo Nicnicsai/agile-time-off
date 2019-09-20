@@ -9,7 +9,7 @@ When spinning the slotmachine you get a city in a country depending on a *random
 We fetch all this information from 4 different API's, to deliver the best results in a beautiful and easy way to read.
 
 ## screenshot of slotmachine
-![Slotmachine](timeslot-screenshot.png)
+![Slotmachine](https://raw.githubusercontent.com/Nicnicsai/agile-time-off/master/assets/images/timeslot-screenshot.png)
 
 ## Logo
 ![Logo Time Off](timeoff-logo-18.png)
